@@ -3,7 +3,7 @@ class Usuario_Model extends CI_Model
 {
     public function fetch_all()
     {
-        $this->db->order_by('id', 'ASC');
+       # $this->db->order_by('id', 'ASC');
         return $this->db->get('usuarios');
     }
 

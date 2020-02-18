@@ -7,16 +7,21 @@ class Usuarios extends REST_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('usuario_model');
+
         $this->load->helper(['jwt', 'authorization']);
         $this->load->model('usuario_model');
     }
 
     public function index_get()
     {
-        $data = $this->verify_request();
+
+        echo "AAAAAAAAA"; 
+        #$data = $this->verify_request();
+        $is_valid = !empty($data); 
+        $is_valid = true;
         
-        if (!empty($data)) {
+        if ($is_valid) {
+            
             $data = $this->usuario_model->fetch_all();
             $status = REST_Controller::HTTP_OK;
             $response = $data->result_array();
