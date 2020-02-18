@@ -15,10 +15,8 @@ class Usuarios extends REST_Controller
     public function index_get()
     {
 
-        echo "AAAAAAAAA"; 
-        #$data = $this->verify_request();
+        $data = $this->verify_request();
         $is_valid = !empty($data); 
-        $is_valid = true;
         
         if ($is_valid) {
             
