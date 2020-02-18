@@ -23,7 +23,6 @@ class Login extends REST_Controller
     {
         $matricula = $this->post('matricula');
         $senha = $this->post('senha');
-        echo "HAAAAAAAAAAAAAAAAAAAAAAA";
         $real_user = $this->usuario_model->get_by_matricula($matricula)[0];
         
         if ($matricula === $real_user['matricula'] && $senha === $real_user['senha']) {
